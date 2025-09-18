@@ -60,5 +60,13 @@ sqrt((2*0.3859)/32) * qtukey(0.95, nmeans = 3, df = 93)
 TukeyHSD(crop.aov, )
 plot(TukeyHSD(crop.aov))
 
+library(ggplot2)
 
+ggplot(crop, aes(x=fertilizer, y = yield, fill = fertilizer))+
+  geom_violin(alpha = 0.5)+
+  geom_jitter(col = "indianred")+
+  geom_boxplot(width = 0.1, col = "white", alpha = 0.5)+
+  theme_light()+
+  labs(x = "Fertilizante",
+       y = "Rerndimiento (ton/ha)")
 
